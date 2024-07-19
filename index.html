@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloneTube</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="/images/Youtube_logo.png">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>
+            <div class="logo">Clone<span class="tube">Tube</span></div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button><img src="https://img.icons8.com/ios-filled/16/000000/search.png" /></button>
+        </div>
+        <div class="header-icons">
+            <div class="notification-menu">
+                <button class="notification-icon"><i class="fas fa-bell"></i></button>
+                <div class="notification-dropdown">
+                    <div class="notification-header">Notifications</div>
+                    <a href="#like-notification"><i class="fas fa-thumbs-up"></i> Someone liked your video</a>
+                    <a href="#comment-notification"><i class="fas fa-comment"></i> Someone commented on your video</a>
+                    <a href="#reply-notification"><i class="fas fa-reply"></i> Someone replied to your comment</a>
+                    <a href="#mention-notification"><i class="fas fa-at"></i> You were mentioned in a comment</a>
+                    <a href="#subscribe-notification"><i class="fas fa-user-plus"></i> New subscriber</a>
+                </div>
+            </div>
+            <div class="profile-menu">
+                <button class="profile-button"><img src="/images/2.png" alt="Profile Image"></button>
+                <div class="profile-dropdown">
+                    <div class="profile-name">Username</div>
+                    <a href="#my-channel"><i class="fas fa-user"></i> My Channel</a>
+                    <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+                    <a href="#logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <button class="sidebar-close"><i class="fas fa-times"></i></button>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#trending"><i class="fas fa-fire"></i> Trending</a></li>
+                <li><a href="#subscriptions"><i class="fas fa-tv"></i> Subscriptions</a></li>
+                <li><a href="#library"><i class="fas fa-book"></i> Library</a></li>
+                <li><a href="#playlists"><i class="fas fa-list"></i> Playlists</a></li>
+                <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="#help"><i class="fas fa-question-circle"></i> Help</a></li>
+                <li><a href="#feedback"><i class="fas fa-comment-dots"></i> Feedback</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="main-content">
+        <div class="video-section">
+            <div class="video-container">
+                <video id="video" width="100%">
+                    <source src="/videos/rawayana-monsieur-perine-hora-loca.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="controls">
+                    <button id="play-pause" class="control-button"><i class="fas fa-play"></i></button>
+                    <input type="range" id="progress-bar" class="progress-bar" value="0" max="100">
+                    <div class="volume-control">
+                        <button id="mute-unmute" class="control-button"><i class="fas fa-volume-mute"></i></button>
+                        <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.1"
+                            value="1">
+                    </div>
+                    <button id="fullscreen" class="control-button"><i class="fas fa-expand"></i></button>
+                    <button id="playback-speed" class="control-button">1x</button>
+                    <button id="quality" class="control-button"><i class="fas fa-cog"></i></button>
+                    <button id="pip" class="control-button"><i class="fas fa-window-restore"></i></button>
+                </div>
+            </div>
+
+            <div class="video-info">
+                <h1 class="video-title">Rawayana, Monsieur Periné - Hora Loca</h1>
+                <div class="video-meta">
+                    <span class="views">1,234,567 views</span>
+                    <span class="upload-date">Uploaded on Jan 1, 2024</span>
+                </div>
+                <div class="profile-info">
+                    <img src="/images/Unknown.jpeg" alt="Profile Image" class="profile-image">
+                    <div class="profile-details">
+                        <span class="profile-name">Rawayana Official</span>
+                        <span class="subscribers">123K subscribers</span>
+                    </div>
+                    <button class="subscribe-button">Subscribe</button>
+                </div>
+                <div class="video-actions">
+                    <button id="like-button" class="action-button"><i class="fas fa-thumbs-up"></i> <span
+                            id="like-count">1.2K</span></button>
+                    <button id="dislike-button" class="action-button"><i class="fas fa-thumbs-down"></i> <span
+                            id="dislike-count">56</span></button>
+                    <button id="share-button" class="action-button"><i class="fas fa-share"></i> <span
+                            id="share-count">89</span></button>
+                </div>
+                <div class="video-description">
+                    <p>Listen to "Hora Loca" on your favorite platform.</p>
+                </div>
+            </div>
+
+            <div class="comments-section">
+                <h2>Comments</h2>
+                <form id="comment-form">
+                    <textarea id="comment-input" placeholder="Add a public comment..."></textarea>
+                    <button type="submit" class="comment-button">Comment</button>
+                </form>
+                <div id="comments-list" class="comments-list">
+                    <!-- Comments will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="related-videos">
+            <h3>Related Videos</h3>
+            <ul class="related-videos-list">
+                <li>
+                    <a href="#">
+                        <div class="thumbnail-overlay">
+                            <img src="/images/c_tangana.jpeg" alt="Video Thumbnail">
+                            <div class="overlay">
+                                <span class="duration">10:00</span>
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h4>Ingobernable</h4>
+                            <p>C.Tangana</p>
+                            <div class="video-meta">
+                                <span class="views">123K views</span>
+                                <span class="likes"><i class="fas fa-thumbs-up"></i> 4.5K</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="thumbnail-overlay">
+                            <img src="/images/ym.jpeg" alt="Video Thumbnail">
+                            <div class="overlay">
+                                <span class="duration">12:30</span>
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h4>Lisa</h4>
+                            <p>Young Miko</p>
+                            <div class="video-meta">
+                                <span class="views">89K views</span>
+                                <span class="likes"><i class="fas fa-thumbs-up"></i> 3.2K</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="thumbnail-overlay">
+                            <img src="/images/maddix.jpeg" alt="Video Thumbnail">
+                            <div class="overlay">
+                                <span class="duration">4:20</span>
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h4>ACID</h4>
+                            <p>Maddix</p>
+                            <div class="video-meta">
+                                <span class="views">619K views</span>
+                                <span class="likes"><i class="fas fa-thumbs-up"></i> 6.6K</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <!-- Add more related videos as needed -->
+            </ul>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            &copy; 2024 CloneTube | All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
